@@ -3,3 +3,7 @@
 
 # downloads
 cache/
+data/
+
+# generated
+results/

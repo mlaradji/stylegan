@@ -67,9 +67,9 @@ class TFRecordDataset:
         self._cur_lod           = -1
 
         # List tfrecords files and inspect their shapes.
-        assert os.path.isdir(self.tfrecord_dir)
+        assert os.path.isdir(self.tfrecord_dir), f"self.tfrecord_dir={self.tfrecord_dir}"
         tfr_files = sorted(glob.glob(os.path.join(self.tfrecord_dir, '*.tfrecords')))
-        assert len(tfr_files) >= 1
+        assert len(tfr_files) >= 1, f"tfr_files={tfr_files}"
         tfr_shapes = []
         for tfr_file in tfr_files:
             tfr_opt = tf.python_io.TFRecordOptions(tf.python_io.TFRecordCompressionType.NONE)
